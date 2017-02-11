@@ -24,6 +24,10 @@
 		F059C2541E4DD522005EFE71 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2531E4DD522005EFE71 /* UserModel.m */; };
 		F059C2571E4DD5B9005EFE71 /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2561E4DD5B9005EFE71 /* HttpRequestManager.m */; };
 		F059C25B1E4DE198005EFE71 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C25A1E4DE198005EFE71 /* TweetCell.m */; };
+		F063D40E1E4EC32D0053F6FD /* TweetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F063D40D1E4EC32D0053F6FD /* TweetModel.m */; };
+		F063D4111E4EC57C0053F6FD /* SenderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F063D4101E4EC57C0053F6FD /* SenderModel.m */; };
+		F063D4141E4ECEFF0053F6FD /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F063D4131E4ECEFF0053F6FD /* CommentModel.m */; };
+		F063D4161E4F24E00053F6FD /* ThoughtWorks.png in Resources */ = {isa = PBXBuildFile; fileRef = F063D4151E4F24E00053F6FD /* ThoughtWorks.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,13 @@
 		F059C2581E4DDD5F005EFE71 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		F059C2591E4DE198005EFE71 /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
 		F059C25A1E4DE198005EFE71 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
+		F063D40C1E4EC32D0053F6FD /* TweetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetModel.h; sourceTree = "<group>"; };
+		F063D40D1E4EC32D0053F6FD /* TweetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetModel.m; sourceTree = "<group>"; };
+		F063D40F1E4EC57C0053F6FD /* SenderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SenderModel.h; sourceTree = "<group>"; };
+		F063D4101E4EC57C0053F6FD /* SenderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SenderModel.m; sourceTree = "<group>"; };
+		F063D4121E4ECEFF0053F6FD /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		F063D4131E4ECEFF0053F6FD /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		F063D4151E4F24E00053F6FD /* ThoughtWorks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ThoughtWorks.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +187,7 @@
 		F059C2051E4DB101005EFE71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F063D4151E4F24E00053F6FD /* ThoughtWorks.png */,
 				F059C24E1E4DCB56005EFE71 /* ThoughtWorksHome.pch */,
 				F059C2061E4DB101005EFE71 /* main.m */,
 				F059C2581E4DDD5F005EFE71 /* config.h */,
@@ -210,6 +222,12 @@
 				F059C2501E4DD313005EFE71 /* MomentsViewModel.m */,
 				F059C2521E4DD522005EFE71 /* UserModel.h */,
 				F059C2531E4DD522005EFE71 /* UserModel.m */,
+				F063D40F1E4EC57C0053F6FD /* SenderModel.h */,
+				F063D4101E4EC57C0053F6FD /* SenderModel.m */,
+				F063D4121E4ECEFF0053F6FD /* CommentModel.h */,
+				F063D4131E4ECEFF0053F6FD /* CommentModel.m */,
+				F063D40C1E4EC32D0053F6FD /* TweetModel.h */,
+				F063D40D1E4EC32D0053F6FD /* TweetModel.m */,
 				F059C2551E4DD5B9005EFE71 /* HttpRequestManager.h */,
 				F059C2561E4DD5B9005EFE71 /* HttpRequestManager.m */,
 				F059C2591E4DE198005EFE71 /* TweetCell.h */,
@@ -288,6 +306,7 @@
 				TargetAttributes = {
 					F059C2011E4DB101005EFE71 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9SR367C2GB;
 						ProvisioningStyle = Automatic;
 					};
 					F059C21D1E4DB101005EFE71 = {
@@ -327,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F063D4161E4F24E00053F6FD /* ThoughtWorks.png in Resources */,
 				F059C2181E4DB101005EFE71 /* LaunchScreen.storyboard in Resources */,
 				F059C2151E4DB101005EFE71 /* Assets.xcassets in Resources */,
 			);
@@ -401,10 +421,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F063D4111E4EC57C0053F6FD /* SenderModel.m in Sources */,
 				F059C20A1E4DB101005EFE71 /* AppDelegate.m in Sources */,
 				F059C2461E4DB6BA005EFE71 /* DiscoverViewController.m in Sources */,
 				F059C2491E4DB6CE005EFE71 /* MeViewController.m in Sources */,
 				F059C25B1E4DE198005EFE71 /* TweetCell.m in Sources */,
+				F063D40E1E4EC32D0053F6FD /* TweetModel.m in Sources */,
+				F063D4141E4ECEFF0053F6FD /* CommentModel.m in Sources */,
 				F059C2431E4DB497005EFE71 /* FriendListViewController.m in Sources */,
 				F059C2571E4DD5B9005EFE71 /* HttpRequestManager.m in Sources */,
 				F059C24D1E4DC579005EFE71 /* MomentsViewController.m in Sources */,
@@ -552,6 +575,7 @@
 			baseConfigurationReference = 0873F83DCF1E513BC11A5AD5 /* Pods-ThoughtWorksHome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9SR367C2GB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ThoughtWorksHome/ThoughtWorksHome.pch";
 				INFOPLIST_FILE = ThoughtWorksHome/Info.plist;
@@ -566,6 +590,7 @@
 			baseConfigurationReference = 39D3A94A88FF963BB5AFC174 /* Pods-ThoughtWorksHome.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9SR367C2GB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/ThoughtWorksHome/ThoughtWorksHome.pch";
 				INFOPLIST_FILE = ThoughtWorksHome/Info.plist;

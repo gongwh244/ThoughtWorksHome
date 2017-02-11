@@ -18,4 +18,6 @@
 
 - (void)getUserInfo;
 
+- (void)getTweetList;
+
 @end

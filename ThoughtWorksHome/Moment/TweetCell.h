@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TweetModel.h"
 
 @interface TweetCell : UITableViewCell
 
+@property (nonatomic,assign) CGFloat cellHeight;
+
 + (TweetCell *)cellWithTableView:(UITableView *)tableView;
+
+- (void)refreshCellWithModel:(TweetModel *)model;
 
 @end

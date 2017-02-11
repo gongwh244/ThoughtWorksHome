@@ -10,11 +10,13 @@
 #import "MomentsViewModel.h"
 #import "UserModel.h"
 #import "TweetCell.h"
+#import "TweetModel.h"
 #import "UIImageView+AFNetworking.h"
 
 @interface MomentsViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UserModel *infoModel;
+@property (nonatomic,strong) NSArray *tweetArr;
 
 @property (nonatomic,strong) UILabel *nickLabel;
 @property (nonatomic,strong) UIImageView *profileImage;
@@ -106,24 +108,42 @@
 }
 
 - (void)refreshHead{
+    
     [self.profileImage setImageWithURL:[NSURL URLWithString:self.infoModel.profileImage]];
     [self.avatarImage setImageWithURL:[NSURL URLWithString:self.infoModel.avatar]];
     self.nickLabel.text = self.infoModel.nick;
+    
+    MomentsViewModel *vm = [[MomentsViewModel alloc] init];
+    [vm setBlocksWithSucBlock:^(id returnData) {
+        TWLog(@"returnData = %@",returnData);
+        self.tweetArr = (NSArray *)returnData;
+        [self.table reloadData];
+    } faiBlock:^(id returnData) {
+        
+    }];
+    [vm getTweetList];
 }
 
 
 #pragma mark TableView Delegate Method
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 12;
+    return self.tweetArr.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
+//    return 180;
+    TweetModel *model = self.tweetArr[indexPath.row];
+    TweetCell *cell = [TweetCell cellWithTableView:tableView];
+    [cell refreshCellWithModel:model];
+    return cell.cellHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    TweetModel *model = self.tweetArr[indexPath.row];
     TweetCell *cell = [TweetCell cellWithTableView:tableView];
+    [cell refreshCellWithModel:model];
     return cell;
 }
 
