@@ -62,7 +62,7 @@
 - (UIView *)head{
     if (!_head) {
         _head = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Screen_width, Screen_width + 40 - 64)];
-        _head.backgroundColor = [UIColor yellowColor];
+        _head.backgroundColor = [UIColor whiteColor];
         [_head addSubview:self.profileImage];
         [_head addSubview:self.avatarImage];
         [_head addSubview:self.nickLabel];
@@ -77,6 +77,8 @@
         _table.delegate = self;
         _table.dataSource = self;
         _table.tableHeaderView = self.head;
+        _table.separatorInset = UIEdgeInsetsZero;
+        _table.layoutMargins = UIEdgeInsetsZero;
     }
     return _table;
 }
@@ -109,7 +111,7 @@
 
 - (void)refreshHead{
     
-    [self.profileImage setImageWithURL:[NSURL URLWithString:self.infoModel.profileImage]];
+    [self.profileImage setImageWithURL:[NSURL URLWithString:self.infoModel.profileImage] placeholderImage:[UIImage imageNamed:@"ThoughtWorks.png"]];
     [self.avatarImage setImageWithURL:[NSURL URLWithString:self.infoModel.avatar]];
     self.nickLabel.text = self.infoModel.nick;
     

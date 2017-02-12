@@ -11,6 +11,8 @@
 #import "UIImageView+AFNetworking.h"
 #import "UIImageView+WebCache.h"
 
+#import "CommentGroundView.h"
+
 @interface TweetCell ()
 
 @property (nonatomic,strong) TweetModel *tweet;
@@ -20,9 +22,19 @@
 @property (nonatomic,strong) UILabel *contentLabel;
 @property (nonatomic,strong) UIView *imageGround;
 
+@property (nonatomic,strong) CommentGroundView *commentView;
+
+
 @end
 
 @implementation TweetCell
+
+- (CommentGroundView *)commentView{
+    if (!_commentView) {
+        _commentView = [[CommentGroundView alloc] initWithFrame:CGRectMake(60, CGRectGetMaxY(self.imageGround.frame), Screen_width - 60 - 30, 0)];
+    }
+    return _commentView;
+}
 
 - (UIImageView *)avatarImage{
     if (!_avatarImage) {
@@ -61,6 +73,9 @@
     return _imageGround;
 }
 
+
+
+
 #pragma mark -----------------------------------
 
 + (TweetCell *)cellWithTableView:(UITableView *)tableView{
@@ -82,6 +97,8 @@
         [self addSubview:self.nameLabel];
         [self addSubview:self.contentLabel];
         [self addSubview:self.imageGround];
+        [self addSubview:self.commentView];
+        
         self.cellHeight = 180;
     }
     return self;
@@ -91,12 +108,12 @@
     
     self.tweet = model;
     
-    [self.avatarImage setImageWithURL:[NSURL URLWithString:model.sender.avatar] placeholderImage:nil];
+    [self.avatarImage sd_setImageWithURL:[NSURL URLWithString:model.sender.avatar] placeholderImage:[UIImage imageNamed:@"ThoughtWorks.png"] completed:nil];
+    
     self.nameLabel.text = model.sender.nick;
     
-    self.contentLabel.text = model.content;
     if (model.content) {
-        CGFloat contentHeight = [self getLabelHeightWithFont:15 labelWidth:CGRectGetWidth(self.contentLabel.frame) string:self.contentLabel.text];
+        CGFloat contentHeight = [self setLabel:self.contentLabel font:15 width:CGRectGetWidth(self.contentLabel.frame) string:model.content];
         self.contentLabel.frame = CGRectMake(CGRectGetMinX(self.contentLabel.frame), CGRectGetMaxY(self.nameLabel.frame), CGRectGetWidth(self.contentLabel.frame), contentHeight);
     }
     
@@ -109,6 +126,14 @@
     
     [self layoutImageGround];
     
+    if (model.comments) {
+        CGFloat commHeight = [self getCommentHeightWithArr:model.comments font:13 width:Screen_width - 90];//[self getCommentHeightWithArr:model.comments];
+        
+        self.commentView.frame = CGRectMake(CGRectGetMinX(self.commentView.frame), CGRectGetMaxY(self.imageGround.frame), CGRectGetWidth(self.commentView.frame), commHeight);
+    }
+    
+    self.cellHeight = CGRectGetMaxY(self.commentView.frame);
+    [self layoutCommentView];
     
     if (self.cellHeight < 60) {
         self.cellHeight = 60;
@@ -116,7 +141,10 @@
     self.cellHeight += 20;
 }
 
-
+- (void)layoutCommentView{
+    
+    [self.commentView refreshByArr:self.tweet.comments];
+}
 
 - (void)layoutImageGround{
     
@@ -137,13 +165,29 @@
     }
 }
 
+- (CGFloat)getCommentHeightWithArr:(NSArray *)arr{
+    return arr.count * 40;
+}
 
+- (CGFloat)getCommentHeightWithArr:(NSArray *)arr font:(CGFloat)font width:(CGFloat)width{
+    CGFloat add = 0;
+    for (CommentModel *model in arr) {
+        
+        NSString *content = [NSString stringWithFormat:@"%@:%@ %@ %@",model.sender.nick,model.content,model.content,model.content];
+        NSAttributedString *name = [[NSAttributedString alloc]initWithString:content attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]}];
+        CGRect nameRect = [name boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil];
+        CGSize nameSize = nameRect.size;
+        add = add + nameSize.height + 6;
+    }
+    return add;
+}
 
-- (CGFloat)getLabelHeightWithFont:(CGFloat)font labelWidth:(CGFloat)width string:(NSString *)string{
+- (CGFloat)setLabel:(UILabel *)label font:(CGFloat)font width:(CGFloat)width string:(NSString *)string{
     
     NSAttributedString *name = [[NSAttributedString alloc]initWithString:string attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]}];
-    CGRect nameRect = [name boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil];
+    CGRect nameRect = [name boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil];
     CGSize nameSize = nameRect.size;
+    label.attributedText = name;
     return nameSize.height;
 }
 
@@ -170,6 +214,8 @@
         return 0;
     }
 }
+#pragma mark -----------------------------------
+
 
 #pragma mark -----------------------------------
 - (void)awakeFromNib {
