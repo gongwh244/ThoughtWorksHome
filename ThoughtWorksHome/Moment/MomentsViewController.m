@@ -13,7 +13,7 @@
 #import "TweetModel.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface MomentsViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MomentsViewController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 @property (nonatomic,strong) UserModel *infoModel;
 @property (nonatomic,strong) NSArray *tweetArr;
@@ -22,8 +22,14 @@
 @property (nonatomic,strong) UIImageView *profileImage;
 @property (nonatomic,strong) UIImageView *avatarImage;
 
+@property (nonatomic,strong) UIActivityIndicatorView *activity;
+
 @property (nonatomic,strong) UIView *head;
 @property (nonatomic,strong) UITableView *table;
+
+@property (nonatomic,assign) BOOL start;
+@property (nonatomic,assign) BOOL isLoading;
+@property (nonatomic,assign) NSInteger num;
 
 @end
 
@@ -34,7 +40,7 @@
 - (UILabel *)nickLabel{
     if (!_nickLabel) {
         _nickLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, Screen_width - 64 + 20 - 40, Screen_width - 10 - 60 - 20 + 10, 15)];
-        _nickLabel.font = [UIFont systemFontOfSize:15];
+        _nickLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16];
         _nickLabel.textColor = [UIColor blackColor];
         _nickLabel.textAlignment = NSTextAlignmentRight;
     }
@@ -66,6 +72,8 @@
         [_head addSubview:self.profileImage];
         [_head addSubview:self.avatarImage];
         [_head addSubview:self.nickLabel];
+        
+        [_head addSubview:self.activity];
     }
     return _head;
 }
@@ -83,10 +91,27 @@
     return _table;
 }
 
+- (UIActivityIndicatorView *)activity{
+    if (!_activity) {
+        _activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        _activity.frame = CGRectMake(0, -44, 44, 44);
+        _activity.hidesWhenStopped = NO;
+    }
+    return _activity;
+}
+
 #pragma mark Normal Method
 
 - (void)makeTableView{
+    
     [self.view addSubview:self.table];
+    UIView *view = [[UIView alloc] init];
+    self.table.tableFooterView = view;
+    __weak typeof(self) weakSelf = self;
+    [self.table addPullToRefreshWithActionHandler:^{
+        weakSelf.num ++;
+        [weakSelf getListWithPage:weakSelf.num];
+    } position:SVPullToRefreshPositionBottom];
 }
 
 - (void)viewDidLoad {
@@ -94,37 +119,78 @@
     [super viewDidLoad];
     self.hidesBottomBarWhenPushed = YES;
     self.title = @"朋友圈";
+    _num = 1;
     [self makeTableView];
+//    [self refreshData];
     
+    [self refreshUser];
+    [self getListWithPage:1];
+}
+
+- (void)refreshUser{
     MomentsViewModel *viewModel = [[MomentsViewModel alloc] init];
     [viewModel setBlocksWithSucBlock:^(id returnData) {
         
-        TWLog(@"%@",returnData);
+        _isLoading = NO;
         self.infoModel = (UserModel *)returnData;
-        [self refreshHead];
+        [self.profileImage setImageWithURL:[NSURL URLWithString:self.infoModel.profileImage] placeholderImage:[UIImage imageNamed:@"ThoughtWorks.png"]];
+        [self.avatarImage setImageWithURL:[NSURL URLWithString:self.infoModel.avatar]];
+        self.nickLabel.text = self.infoModel.nick;
         
     } faiBlock:^(id returnData) {
-        
+        TWLog(@"error = %@",returnData);
     }];
+    _isLoading = YES;
     [viewModel getUserInfo];
 }
 
-- (void)refreshHead{
-    
-    [self.profileImage setImageWithURL:[NSURL URLWithString:self.infoModel.profileImage] placeholderImage:[UIImage imageNamed:@"ThoughtWorks.png"]];
-    [self.avatarImage setImageWithURL:[NSURL URLWithString:self.infoModel.avatar]];
-    self.nickLabel.text = self.infoModel.nick;
+//- (void)refreshData{
+//    
+//    
+//    MomentsViewModel *viewModel = [[MomentsViewModel alloc] init];
+//    [viewModel setBlocksWithSucBlock:^(id returnData) {
+//        
+//        _isLoading = NO;
+//        self.infoModel = (UserModel *)returnData;
+//        [self refreshHead];
+//        
+//    } faiBlock:^(id returnData) {
+//        TWLog(@"error = %@",returnData);
+//    }];
+//    _isLoading = YES;
+//    [viewModel getUserInfo];
+//}
+
+- (void)getListWithPage:(NSInteger)page{
     
     MomentsViewModel *vm = [[MomentsViewModel alloc] init];
     [vm setBlocksWithSucBlock:^(id returnData) {
-        TWLog(@"returnData = %@",returnData);
+        _isLoading = NO;
         self.tweetArr = (NSArray *)returnData;
         [self.table reloadData];
-    } faiBlock:^(id returnData) {
+        _start = NO;
+        [self.activity stopAnimating];
+        [self.table.pullToRefreshView stopAnimating];
+        [UIView animateWithDuration:0.3 animations:^{
+            self.activity.frame = CGRectMake(0, -44, 44, 44);
+        } completion:^(BOOL finished) {
+            
+        }];
         
+    } faiBlock:^(id returnData) {
+        TWLog(@"error = %@",returnData);
     }];
-    [vm getTweetList];
+    _isLoading = YES;
+    [vm getTweetListWithPage:page];
 }
+
+//- (void)refreshHead{
+//    
+//    [self.profileImage setImageWithURL:[NSURL URLWithString:self.infoModel.profileImage] placeholderImage:[UIImage imageNamed:@"ThoughtWorks.png"]];
+//    [self.avatarImage setImageWithURL:[NSURL URLWithString:self.infoModel.avatar]];
+//    self.nickLabel.text = self.infoModel.nick;
+//    [self getListWithPage:1];
+//}
 
 
 #pragma mark TableView Delegate Method
@@ -134,7 +200,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return 180;
+    
     TweetModel *model = self.tweetArr[indexPath.row];
     TweetCell *cell = [TweetCell cellWithTableView:tableView];
     [cell refreshCellWithModel:model];
@@ -149,69 +215,19 @@
     return cell;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    if (scrollView.contentOffset.y < -44-64) {
+        [self.activity startAnimating];
+        _start = YES;
+        if (!_isLoading) {
+            [self refreshUser];
+            [self getListWithPage:1];;
+        }
+    }
+    if (_start) {
+        self.activity.frame = CGRectMake(0, scrollView.contentOffset.y + 64, 44, 44);
+    }
 }
 
 

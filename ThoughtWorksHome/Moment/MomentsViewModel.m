@@ -30,10 +30,19 @@
 
 - (void)getUserInfo{
     
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    NSDictionary *memoryDic = [def objectForKey:@"user"];
+    if (memoryDic) {
+        [self userModelFromDic:memoryDic];
+    }
+    
     [HttpRequestManager httpRequestGetWithUrl:GET_USERINFO_URL parameter:nil success:^(id returnData) {
-        [self userModelFromDic:returnData];
-    } failure:^(id returnData) {
         
+        [self userModelFromDic:returnData];
+        [def setObject:returnData forKey:@"user"];
+        [def synchronize];
+    } failure:^(id returnData) {
+        self.faiBlock(returnData);
     }];
 }
 
@@ -48,13 +57,66 @@
     self.sucBlock(self.userModel);
 }
 
-- (void)getTweetList{
+- (void)getTweetListWithPage:(NSInteger)page{
+    
     [HttpRequestManager httpRequestGetWithUrl:GET_TWEETS_URL parameter:nil success:^(id returnData) {
-        TWLog(@"hahah = %@",returnData);
-        [self tweetArrayFromArr:returnData];
-    } failure:^(id returnData) {
         
+        [self tweetArrayFromArr:returnData Page:page];
+    } failure:^(id returnData) {
+        self.faiBlock(returnData);
     }];
+}
+
+- (void)tweetArrayFromArr:(id)arr Page:(NSInteger)page{
+    
+    self.tweetArr = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary *dic in (NSArray *)arr) {
+        
+        if (!dic[@"sender"]) {
+            continue;
+        }
+        if (!dic[@"content"] && !dic[@"images"]) {
+            continue;
+        }
+        
+        NSDictionary *sender = dic[@"sender"];
+        SenderModel *sModel = [[SenderModel alloc] init];
+        sModel.avatar = sender[@"avatar"];
+        sModel.nick = sender[@"nick"];
+        sModel.username = sender[@"username"];
+        
+        NSArray *imageArr = dic[@"images"];
+        NSMutableArray *imgArray = [[NSMutableArray alloc] init];
+        if (imageArr && imageArr.count > 0) {
+            for (NSDictionary *urlDic in imageArr) {
+                [imgArray addObject:urlDic[@"url"]];
+            }
+        }
+        
+        NSArray *comArr = dic[@"comments"];
+        NSMutableArray *commentArray = [[NSMutableArray alloc] init];
+        if (comArr && comArr.count > 0) {
+            for (NSDictionary *commDic in comArr) {
+                [commentArray addObject:[self comModelFromDic:commDic]];
+            }
+        }
+        
+        TweetModel *model = [[TweetModel alloc] init];
+        model.sender = sModel;
+        model.content = dic[@"content"];
+        model.images = imgArray;
+        model.comments = commentArray;
+        
+        [self.tweetArr addObject:model];
+    }
+    
+    if (page * 5 < self.tweetArr.count) {
+        NSArray *arr = [self.tweetArr subarrayWithRange:NSMakeRange(0, page * 5)];
+        self.sucBlock(arr);
+    }else{
+        self.sucBlock(self.tweetArr);
+    }
 }
 
 - (void)tweetArrayFromArr:(id)arr{

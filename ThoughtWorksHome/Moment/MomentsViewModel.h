@@ -18,6 +18,6 @@
 
 - (void)getUserInfo;
 
-- (void)getTweetList;
+- (void)getTweetListWithPage:(NSInteger)page;
 
 @end

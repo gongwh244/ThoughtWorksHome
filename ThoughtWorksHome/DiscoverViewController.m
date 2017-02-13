@@ -32,6 +32,7 @@
     [super viewDidLoad];
     
     [self.view addSubview:self.table];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 
@@ -47,7 +48,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] init];
-        cell.backgroundColor = [UIColor yellowColor];
+        cell.backgroundColor = [UIColor whiteColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.text = @"朋友圈";
     }

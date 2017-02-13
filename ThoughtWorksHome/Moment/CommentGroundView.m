@@ -8,11 +8,15 @@
 
 #import "CommentGroundView.h"
 #import "CommentCell.h"
+
+#import <QuartzCore/QuartzCore.h>
+
 @interface CommentGroundView ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *comTable;
 @property (nonatomic,strong) NSArray *dataArr;
 
+@property (nonatomic,strong) CAShapeLayer *threelayer;
 @end
 
 @implementation CommentGroundView
@@ -34,19 +38,40 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = UIColorFromRGB(0xf3f3f5);
+        [self layoutMarker];
     }
     return self;
 }
 
-- (void)refreshByArr:(NSArray *)arr{
+- (void)layoutMarker{
+    
+    self.threelayer = [CAShapeLayer new];
+    
+    UIBezierPath *three = [UIBezierPath bezierPath];
+    [three moveToPoint:CGPointMake(15.8, -5)];
+    [three addLineToPoint:CGPointMake( 21.6, 0)];
+    [three addLineToPoint:CGPointMake( 10, 0)];
+    [three addLineToPoint:CGPointMake(15.8, -5)];
     
     
-    [self addSubview:self.comTable];
-    self.dataArr = arr;
-    self.comTable.frame = self.bounds;
-    [self.comTable reloadData];
+    self.threelayer.path = three.CGPath;
+    UIColor *color = UIColorFromRGB(0xf3f3f5);
+    self.threelayer.strokeColor = color.CGColor;
+    self.threelayer.fillColor = color.CGColor;
+    [self.layer addSublayer:self.threelayer];
 }
 
+- (void)refreshByArr:(NSArray *)arr{
+    
+    self.threelayer.hidden = (self.frame.size.height == 0);
+    if (arr && arr.count > 0) {
+        
+        [self addSubview:self.comTable];
+        self.dataArr = arr;
+        self.comTable.frame = self.bounds;
+        [self.comTable reloadData];
+    }
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArr.count;

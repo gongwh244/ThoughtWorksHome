@@ -27,11 +27,16 @@
 
 @end
 
-@implementation TweetCell
+@implementation TweetCell{
+    
+    CGFloat groundWidth;
+    CGFloat imageWidth;
+    CGFloat spaceWidth;
+}
 
 - (CommentGroundView *)commentView{
     if (!_commentView) {
-        _commentView = [[CommentGroundView alloc] initWithFrame:CGRectMake(60, CGRectGetMaxY(self.imageGround.frame), Screen_width - 60 - 30, 0)];
+        _commentView = [[CommentGroundView alloc] initWithFrame:CGRectMake(60, CGRectGetMaxY(self.imageGround.frame) + 10, Screen_width - 60 - 30, 0)];
     }
     return _commentView;
 }
@@ -40,26 +45,23 @@
     if (!_avatarImage) {
         _avatarImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 20, 40, 40)];
         _avatarImage.backgroundColor = [UIColor yellowColor];
-        _avatarImage.layer.masksToBounds = YES;
-        _avatarImage.layer.borderColor = [UIColor grayColor].CGColor;
-        _avatarImage.layer.borderWidth = 0.3;
     }
     return _avatarImage;
 }
 
 - (UILabel *)nameLabel{
     if (!_nameLabel) {
-        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 20, Screen_width - 60 - 30, 20)];
-        _nameLabel.text = @"aldsjfal";
-        _nameLabel.backgroundColor = [UIColor blueColor];
+        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 20, Screen_width - 60 - 30, 18)];
+        _nameLabel.textColor = UIColorFromRGB(0x616887);
+        _nameLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
+        
     }
     return _nameLabel;
 }
 
 - (UILabel *)contentLabel{
     if (!_contentLabel) {
-        _contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 40, Screen_width - 60 - 30, 0)];
-        _contentLabel.backgroundColor = [UIColor grayColor];
+        _contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, CGRectGetMaxY(self.nameLabel.frame)+10, Screen_width - 60 - 30, 0)];
         _contentLabel.numberOfLines = 0;
     }
     return _contentLabel;
@@ -67,8 +69,8 @@
 
 - (UIView *)imageGround{
     if (!_imageGround) {
-        _imageGround = [[UIView alloc] initWithFrame:CGRectMake(60, CGRectGetMaxY(self.contentLabel.frame), Screen_width - 60 - 30, 0)];//100
-        _imageGround.backgroundColor = [UIColor redColor];
+        _imageGround = [[UIView alloc] initWithFrame:CGRectMake(60, CGRectGetMaxY(self.contentLabel.frame)+10, Screen_width - 60 - 30, 0)];//100
+        _imageGround.backgroundColor = [UIColor whiteColor];
     }
     return _imageGround;
 }
@@ -99,6 +101,8 @@
         [self addSubview:self.imageGround];
         [self addSubview:self.commentView];
         
+        [self initData];
+        
         self.cellHeight = 180;
     }
     return self;
@@ -109,31 +113,39 @@
     self.tweet = model;
     
     [self.avatarImage sd_setImageWithURL:[NSURL URLWithString:model.sender.avatar] placeholderImage:[UIImage imageNamed:@"ThoughtWorks.png"] completed:nil];
-    
     self.nameLabel.text = model.sender.nick;
+    self.cellHeight = CGRectGetMaxY(self.avatarImage.frame);
     
     if (model.content) {
         CGFloat contentHeight = [self setLabel:self.contentLabel font:15 width:CGRectGetWidth(self.contentLabel.frame) string:model.content];
-        self.contentLabel.frame = CGRectMake(CGRectGetMinX(self.contentLabel.frame), CGRectGetMaxY(self.nameLabel.frame), CGRectGetWidth(self.contentLabel.frame), contentHeight);
+        self.contentLabel.frame = CGRectMake(CGRectGetMinX(self.contentLabel.frame), CGRectGetMaxY(self.nameLabel.frame) + 10, CGRectGetWidth(self.contentLabel.frame), contentHeight);
+    }else{
+        self.contentLabel.frame = CGRectMake(CGRectGetMinX(self.contentLabel.frame), CGRectGetMaxY(self.nameLabel.frame), CGRectGetWidth(self.contentLabel.frame), 0);
     }
+    self.cellHeight = CGRectGetMaxY(self.contentLabel.frame);
     
-    if (model.images) {
+    if (model.images && model.images.count > 0) {
         CGFloat groundHeight = [self getImageGroundHeightWithArr:model.images];
-        self.imageGround.frame = CGRectMake(CGRectGetMinX(self.imageGround.frame), CGRectGetMaxY(self.contentLabel.frame), CGRectGetWidth(self.imageGround.frame), groundHeight);
+        self.imageGround.frame = CGRectMake(CGRectGetMinX(self.imageGround.frame), CGRectGetMaxY(self.contentLabel.frame) + 10, CGRectGetWidth(self.imageGround.frame), groundHeight);
+        
+        [self layoutImageGround];
+    }else{
+        self.imageGround.frame = CGRectMake(CGRectGetMinX(self.imageGround.frame), CGRectGetMaxY(self.contentLabel.frame), CGRectGetWidth(self.imageGround.frame), 0);
     }
-    
     self.cellHeight = CGRectGetMaxY(self.imageGround.frame);
     
-    [self layoutImageGround];
     
-    if (model.comments) {
+    
+    
+    if (model.comments && model.comments.count > 0) {
         CGFloat commHeight = [self getCommentHeightWithArr:model.comments font:13 width:Screen_width - 90];//[self getCommentHeightWithArr:model.comments];
-        
-        self.commentView.frame = CGRectMake(CGRectGetMinX(self.commentView.frame), CGRectGetMaxY(self.imageGround.frame), CGRectGetWidth(self.commentView.frame), commHeight);
+        self.commentView.frame = CGRectMake(CGRectGetMinX(self.commentView.frame), CGRectGetMaxY(self.imageGround.frame) + 10, CGRectGetWidth(self.commentView.frame), commHeight);
+    }else{
+        self.commentView.frame = CGRectMake(CGRectGetMinX(self.commentView.frame), CGRectGetMaxY(self.imageGround.frame), CGRectGetWidth(self.commentView.frame), 0);
     }
-    
-    self.cellHeight = CGRectGetMaxY(self.commentView.frame);
     [self layoutCommentView];
+    self.cellHeight = CGRectGetMaxY(self.commentView.frame);
+    
     
     if (self.cellHeight < 60) {
         self.cellHeight = 60;
@@ -148,9 +160,6 @@
 
 - (void)layoutImageGround{
     
-    CGFloat groundWidth = Screen_width - 90;
-    CGFloat spaceWidth = (groundWidth - 70 * 3)/2;
-    CGFloat imageWidth = 70;
     
     for (int i = 0; i < self.tweet.images.count; i++) {
         
@@ -191,12 +200,23 @@
     return nameSize.height;
 }
 
+- (void)initData{
+    
+    groundWidth = Screen_width - 90;
+    
+    
+    imageWidth = 70;
+    if (IsIPhone6) {
+        imageWidth = 88;
+    }
+    if (IsIPhone6Plus) {
+        imageWidth = 101;
+    }
+    
+    spaceWidth = (groundWidth - imageWidth * 3)/2;
+}
+
 - (CGFloat)getImageGroundHeightWithArr:(NSArray *)arr{
-    
-    CGFloat groundWidth = Screen_width - 90;
-    CGFloat spaceWidth = (groundWidth - 70 * 3)/2;
-    CGFloat imageWidth = 70;
-    
     
     if (arr.count == 0) {
         return 0;
@@ -213,20 +233,6 @@
         }
         return 0;
     }
-}
-#pragma mark -----------------------------------
-
-
-#pragma mark -----------------------------------
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 

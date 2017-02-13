@@ -18,10 +18,9 @@
 
 - (UILabel *)comLabel{
     if (!_comLabel) {
-        _comLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 3, Screen_width - 90, 0)];
+        _comLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 3, Screen_width - 90 -5, 0)];
         _comLabel.textAlignment = NSTextAlignmentLeft;
         _comLabel.numberOfLines = 0;
-        _comLabel.backgroundColor = [UIColor yellowColor];
         _comLabel.adjustsFontSizeToFitWidth = YES;
     }
     return _comLabel;
@@ -58,29 +57,19 @@
 
 - (void)refreshCellWithModel:(CommentModel *)model{
     
-    NSString *content = [NSString stringWithFormat:@"%@:%@ %@ %@",model.sender.nick,model.content,model.content,model.content];
-    [self setLabel:self.comLabel font:13 width:Screen_width - 90 string:content];
-}
-
-- (CGFloat)setLabel:(UILabel *)label font:(CGFloat)font width:(CGFloat)width string:(NSString *)string{
+    NSString *nick = [NSString stringWithFormat:@"%@:",model.sender.nick];
+    NSString *text = [NSString stringWithFormat:@"%@ %@ %@",model.content,model.content,model.content];
+    NSString *content = [NSString stringWithFormat:@"%@%@",nick,text];
     
-    NSAttributedString *name = [[NSAttributedString alloc]initWithString:string attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]}];
-    CGRect nameRect = [name boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil];
-    CGSize nameSize = nameRect.size;
-    label.attributedText = name;
-    label.frame = CGRectMake(CGRectGetMinX(label.frame), CGRectGetMinY(label.frame), CGRectGetWidth(label.frame), nameSize.height);
-    return nameSize.height;
+    NSMutableAttributedString *beforeStr = [[NSMutableAttributedString alloc] initWithString:content attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]}];
+    [beforeStr addAttribute:NSForegroundColorAttributeName value:UIColorFromRGB(0x616887) range:[content rangeOfString:nick]];
+    [beforeStr addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:13] range:[content rangeOfString:nick]];
+    [beforeStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:[content rangeOfString:text]];
+    self.comLabel.attributedText = beforeStr;
+    
+    CGRect nameRect = [beforeStr boundingRectWithSize:CGSizeMake(Screen_width - 90, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil];
+    self.comLabel.frame = CGRectMake(CGRectGetMinX(self.comLabel.frame), CGRectGetMinY(self.comLabel.frame), CGRectGetWidth(self.comLabel.frame), nameRect.size.height);
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 @end

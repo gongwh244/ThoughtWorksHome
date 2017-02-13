@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4AE70C490451626A30FCC2DA /* libPods-ThoughtWorksHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1920A937474D4904D507C9A9 /* libPods-ThoughtWorksHome.a */; };
+		F05579121E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = F055790F1E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.m */; };
+		F05579131E51973100AF38CC /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = F05579111E51973100AF38CC /* UIScrollView+SVPullToRefresh.m */; };
 		F059C2071E4DB101005EFE71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2061E4DB101005EFE71 /* main.m */; };
 		F059C20A1E4DB101005EFE71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2091E4DB101005EFE71 /* AppDelegate.m */; };
 		F059C2151E4DB101005EFE71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F059C2141E4DB101005EFE71 /* Assets.xcassets */; };
 		F059C2181E4DB101005EFE71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F059C2161E4DB101005EFE71 /* LaunchScreen.storyboard */; };
-		F059C2231E4DB101005EFE71 /* ThoughtWorksHomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2221E4DB101005EFE71 /* ThoughtWorksHomeTests.m */; };
-		F059C22E1E4DB101005EFE71 /* ThoughtWorksHomeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C22D1E4DB101005EFE71 /* ThoughtWorksHomeUITests.m */; };
 		F059C23D1E4DB171005EFE71 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C23C1E4DB171005EFE71 /* MainViewController.m */; };
 		F059C2401E4DB47D005EFE71 /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C23F1E4DB47D005EFE71 /* ChatListViewController.m */; };
 		F059C2431E4DB497005EFE71 /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2421E4DB497005EFE71 /* FriendListViewController.m */; };
@@ -53,6 +53,11 @@
 		0873F83DCF1E513BC11A5AD5 /* Pods-ThoughtWorksHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtWorksHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtWorksHome/Pods-ThoughtWorksHome.debug.xcconfig"; sourceTree = "<group>"; };
 		1920A937474D4904D507C9A9 /* libPods-ThoughtWorksHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThoughtWorksHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D3A94A88FF963BB5AFC174 /* Pods-ThoughtWorksHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtWorksHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtWorksHome/Pods-ThoughtWorksHome.release.xcconfig"; sourceTree = "<group>"; };
+		F055790D1E51973100AF38CC /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		F055790E1E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		F055790F1E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		F05579101E51973100AF38CC /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		F05579111E51973100AF38CC /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		F059C2021E4DB101005EFE71 /* ThoughtWorksHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThoughtWorksHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F059C2061E4DB101005EFE71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F059C2081E4DB101005EFE71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,11 +66,7 @@
 		F059C2171E4DB101005EFE71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F059C2191E4DB101005EFE71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F059C21E1E4DB101005EFE71 /* ThoughtWorksHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThoughtWorksHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F059C2221E4DB101005EFE71 /* ThoughtWorksHomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThoughtWorksHomeTests.m; sourceTree = "<group>"; };
-		F059C2241E4DB101005EFE71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F059C2291E4DB101005EFE71 /* ThoughtWorksHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThoughtWorksHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F059C22D1E4DB101005EFE71 /* ThoughtWorksHomeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThoughtWorksHomeUITests.m; sourceTree = "<group>"; };
-		F059C22F1E4DB101005EFE71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F059C23B1E4DB171005EFE71 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		F059C23C1E4DB171005EFE71 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		F059C23E1E4DB47D005EFE71 /* ChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatListViewController.h; sourceTree = "<group>"; };
@@ -144,12 +145,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F055790C1E51973100AF38CC /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				F055790D1E51973100AF38CC /* SVPullToRefresh.h */,
+				F055790E1E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.h */,
+				F055790F1E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.m */,
+				F05579101E51973100AF38CC /* UIScrollView+SVPullToRefresh.h */,
+				F05579111E51973100AF38CC /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
 		F059C1F91E4DB101005EFE71 = {
 			isa = PBXGroup;
 			children = (
 				F059C2041E4DB101005EFE71 /* ThoughtWorksHome */,
-				F059C2211E4DB101005EFE71 /* ThoughtWorksHomeTests */,
-				F059C22C1E4DB101005EFE71 /* ThoughtWorksHomeUITests */,
 				F059C2031E4DB101005EFE71 /* Products */,
 				05ADC94ED01D207BA07B1A7D /* Pods */,
 				29BFAA7A50B41D7DD7761E35 /* Frameworks */,
@@ -201,27 +212,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F059C2211E4DB101005EFE71 /* ThoughtWorksHomeTests */ = {
-			isa = PBXGroup;
-			children = (
-				F059C2221E4DB101005EFE71 /* ThoughtWorksHomeTests.m */,
-				F059C2241E4DB101005EFE71 /* Info.plist */,
-			);
-			path = ThoughtWorksHomeTests;
-			sourceTree = "<group>";
-		};
-		F059C22C1E4DB101005EFE71 /* ThoughtWorksHomeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F059C22D1E4DB101005EFE71 /* ThoughtWorksHomeUITests.m */,
-				F059C22F1E4DB101005EFE71 /* Info.plist */,
-			);
-			path = ThoughtWorksHomeUITests;
-			sourceTree = "<group>";
-		};
 		F059C24A1E4DC555005EFE71 /* Moment */ = {
 			isa = PBXGroup;
 			children = (
+				F055790C1E51973100AF38CC /* SVPullToRefresh */,
 				F059C24B1E4DC579005EFE71 /* MomentsViewController.h */,
 				F059C24C1E4DC579005EFE71 /* MomentsViewController.m */,
 				F059C24F1E4DD313005EFE71 /* MomentsViewModel.h */,
@@ -433,7 +427,9 @@
 			files = (
 				F063D4111E4EC57C0053F6FD /* SenderModel.m in Sources */,
 				F059C20A1E4DB101005EFE71 /* AppDelegate.m in Sources */,
+				F05579121E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				F059C2461E4DB6BA005EFE71 /* DiscoverViewController.m in Sources */,
+				F05579131E51973100AF38CC /* UIScrollView+SVPullToRefresh.m in Sources */,
 				F059C2491E4DB6CE005EFE71 /* MeViewController.m in Sources */,
 				F059C25B1E4DE198005EFE71 /* TweetCell.m in Sources */,
 				F063D40E1E4EC32D0053F6FD /* TweetModel.m in Sources */,
@@ -455,7 +451,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F059C2231E4DB101005EFE71 /* ThoughtWorksHomeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +458,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F059C22E1E4DB101005EFE71 /* ThoughtWorksHomeUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
