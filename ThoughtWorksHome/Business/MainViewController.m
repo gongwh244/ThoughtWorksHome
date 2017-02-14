@@ -27,7 +27,6 @@
     vc1.title = @"微信";
     nc1.view.backgroundColor = [UIColor whiteColor];
     nc1.tabBarItem.title = @"微信";
-//    nc1.tabBarItem.badgeValue = @"2";
     
     FriendListViewController *vc2 = [[FriendListViewController alloc] init];
     UINavigationController *nc2 = [[UINavigationController alloc] initWithRootViewController:vc2];
@@ -35,7 +34,6 @@
     vc2.title = @"通讯录";
     nc2.view.backgroundColor = [UIColor whiteColor];
     nc2.tabBarItem.title = @"通讯录";
-//    nc2.tabBarItem.badgeValue = @"8";
     
     DiscoverViewController *vc3 = [[DiscoverViewController alloc] init];
     UINavigationController *nc3 = [[UINavigationController alloc] initWithRootViewController:vc3];
@@ -43,7 +41,6 @@
     vc3.title = @"发现";
     nc3.view.backgroundColor = [UIColor whiteColor];
     nc3.tabBarItem.title = @"发现";
-//    nc3.tabBarItem.badgeValue = @"1";
     
     MeViewController *vc4 = [[MeViewController alloc] init];
     UINavigationController *nc4 = [[UINavigationController alloc] initWithRootViewController:vc4];
@@ -51,7 +48,6 @@
     vc4.title = @"我";
     nc4.view.backgroundColor = [UIColor whiteColor];
     nc4.tabBarItem.title = @"我";
-//    nc4.tabBarItem.badgeValue = @"1";
     
     self.viewControllers = @[nc1,nc2,nc3,nc4];
 }

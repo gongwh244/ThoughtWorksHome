@@ -184,15 +184,6 @@
     [vm getTweetListWithPage:page];
 }
 
-//- (void)refreshHead{
-//    
-//    [self.profileImage setImageWithURL:[NSURL URLWithString:self.infoModel.profileImage] placeholderImage:[UIImage imageNamed:@"ThoughtWorks.png"]];
-//    [self.avatarImage setImageWithURL:[NSURL URLWithString:self.infoModel.avatar]];
-//    self.nickLabel.text = self.infoModel.nick;
-//    [self getListWithPage:1];
-//}
-
-
 #pragma mark TableView Delegate Method
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -217,7 +208,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    if (scrollView.contentOffset.y < -44-64) {
+    if (scrollView.contentOffset.y < -44 - 64) {
         [self.activity startAnimating];
         _start = YES;
         if (!_isLoading) {

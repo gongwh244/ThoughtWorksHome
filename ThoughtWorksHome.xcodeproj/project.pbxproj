@@ -8,28 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		4AE70C490451626A30FCC2DA /* libPods-ThoughtWorksHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1920A937474D4904D507C9A9 /* libPods-ThoughtWorksHome.a */; };
-		F05579121E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = F055790F1E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.m */; };
-		F05579131E51973100AF38CC /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = F05579111E51973100AF38CC /* UIScrollView+SVPullToRefresh.m */; };
 		F059C2071E4DB101005EFE71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2061E4DB101005EFE71 /* main.m */; };
-		F059C20A1E4DB101005EFE71 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2091E4DB101005EFE71 /* AppDelegate.m */; };
 		F059C2151E4DB101005EFE71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F059C2141E4DB101005EFE71 /* Assets.xcassets */; };
 		F059C2181E4DB101005EFE71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F059C2161E4DB101005EFE71 /* LaunchScreen.storyboard */; };
-		F059C23D1E4DB171005EFE71 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C23C1E4DB171005EFE71 /* MainViewController.m */; };
-		F059C2401E4DB47D005EFE71 /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C23F1E4DB47D005EFE71 /* ChatListViewController.m */; };
-		F059C2431E4DB497005EFE71 /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2421E4DB497005EFE71 /* FriendListViewController.m */; };
-		F059C2461E4DB6BA005EFE71 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2451E4DB6BA005EFE71 /* DiscoverViewController.m */; };
-		F059C2491E4DB6CE005EFE71 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2481E4DB6CE005EFE71 /* MeViewController.m */; };
-		F059C24D1E4DC579005EFE71 /* MomentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C24C1E4DC579005EFE71 /* MomentsViewController.m */; };
-		F059C2511E4DD313005EFE71 /* MomentsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2501E4DD313005EFE71 /* MomentsViewModel.m */; };
-		F059C2541E4DD522005EFE71 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2531E4DD522005EFE71 /* UserModel.m */; };
-		F059C2571E4DD5B9005EFE71 /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C2561E4DD5B9005EFE71 /* HttpRequestManager.m */; };
-		F059C25B1E4DE198005EFE71 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F059C25A1E4DE198005EFE71 /* TweetCell.m */; };
-		F05DF59F1E5035940056C3FD /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F05DF59E1E5035940056C3FD /* CommentCell.m */; };
-		F05DF5A21E503F360056C3FD /* CommentGroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F05DF5A11E503F360056C3FD /* CommentGroundView.m */; };
-		F063D40E1E4EC32D0053F6FD /* TweetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F063D40D1E4EC32D0053F6FD /* TweetModel.m */; };
-		F063D4111E4EC57C0053F6FD /* SenderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F063D4101E4EC57C0053F6FD /* SenderModel.m */; };
-		F063D4141E4ECEFF0053F6FD /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F063D4131E4ECEFF0053F6FD /* CommentModel.m */; };
 		F063D4161E4F24E00053F6FD /* ThoughtWorks.png in Resources */ = {isa = PBXBuildFile; fileRef = F063D4151E4F24E00053F6FD /* ThoughtWorks.png */; };
+		F08E44771E52C45B00D926D8 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44741E52C45B00D926D8 /* UIScrollView+SVInfiniteScrolling.m */; };
+		F08E44781E52C45B00D926D8 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44761E52C45B00D926D8 /* UIScrollView+SVPullToRefresh.m */; };
+		F08E44941E52C64A00D926D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44851E52C64A00D926D8 /* AppDelegate.m */; };
+		F08E44951E52C64A00D926D8 /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44881E52C64A00D926D8 /* ChatListViewController.m */; };
+		F08E44961E52C64A00D926D8 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E448B1E52C64A00D926D8 /* DiscoverViewController.m */; };
+		F08E44971E52C64A00D926D8 /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E448E1E52C64A00D926D8 /* FriendListViewController.m */; };
+		F08E44981E52C64A00D926D8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44901E52C64A00D926D8 /* MainViewController.m */; };
+		F08E44991E52C64A00D926D8 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44931E52C64A00D926D8 /* MeViewController.m */; };
+		F08E44D31E52C6F000D926D8 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44C01E52C6F000D926D8 /* CommentModel.m */; };
+		F08E44D41E52C6F000D926D8 /* SenderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44C21E52C6F000D926D8 /* SenderModel.m */; };
+		F08E44D51E52C6F000D926D8 /* TweetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44C41E52C6F000D926D8 /* TweetModel.m */; };
+		F08E44D61E52C6F000D926D8 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44C61E52C6F000D926D8 /* UserModel.m */; };
+		F08E44D71E52C6F000D926D8 /* MomentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44C81E52C6F000D926D8 /* MomentsViewController.m */; };
+		F08E44D91E52C6F000D926D8 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44CD1E52C6F000D926D8 /* CommentCell.m */; };
+		F08E44DA1E52C6F000D926D8 /* CommentGroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44CF1E52C6F000D926D8 /* CommentGroundView.m */; };
+		F08E44DB1E52C6F000D926D8 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44D11E52C6F000D926D8 /* TweetCell.m */; };
+		F08E44E11E52C76100D926D8 /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44DE1E52C76100D926D8 /* HttpRequestManager.m */; };
+		F08E44E21E52C76100D926D8 /* MomentsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E44E01E52C76100D926D8 /* MomentsViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,53 +53,53 @@
 		0873F83DCF1E513BC11A5AD5 /* Pods-ThoughtWorksHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtWorksHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtWorksHome/Pods-ThoughtWorksHome.debug.xcconfig"; sourceTree = "<group>"; };
 		1920A937474D4904D507C9A9 /* libPods-ThoughtWorksHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThoughtWorksHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D3A94A88FF963BB5AFC174 /* Pods-ThoughtWorksHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThoughtWorksHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThoughtWorksHome/Pods-ThoughtWorksHome.release.xcconfig"; sourceTree = "<group>"; };
-		F055790D1E51973100AF38CC /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
-		F055790E1E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
-		F055790F1E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
-		F05579101E51973100AF38CC /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
-		F05579111E51973100AF38CC /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		F059C2021E4DB101005EFE71 /* ThoughtWorksHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThoughtWorksHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F059C2061E4DB101005EFE71 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F059C2081E4DB101005EFE71 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F059C2091E4DB101005EFE71 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F059C2141E4DB101005EFE71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F059C2171E4DB101005EFE71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F059C2191E4DB101005EFE71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F059C21E1E4DB101005EFE71 /* ThoughtWorksHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThoughtWorksHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F059C2291E4DB101005EFE71 /* ThoughtWorksHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThoughtWorksHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F059C23B1E4DB171005EFE71 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		F059C23C1E4DB171005EFE71 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		F059C23E1E4DB47D005EFE71 /* ChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatListViewController.h; sourceTree = "<group>"; };
-		F059C23F1E4DB47D005EFE71 /* ChatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatListViewController.m; sourceTree = "<group>"; };
-		F059C2411E4DB497005EFE71 /* FriendListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListViewController.h; sourceTree = "<group>"; };
-		F059C2421E4DB497005EFE71 /* FriendListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListViewController.m; sourceTree = "<group>"; };
-		F059C2441E4DB6BA005EFE71 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
-		F059C2451E4DB6BA005EFE71 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
-		F059C2471E4DB6CE005EFE71 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
-		F059C2481E4DB6CE005EFE71 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
-		F059C24B1E4DC579005EFE71 /* MomentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentsViewController.h; sourceTree = "<group>"; };
-		F059C24C1E4DC579005EFE71 /* MomentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsViewController.m; sourceTree = "<group>"; };
 		F059C24E1E4DCB56005EFE71 /* ThoughtWorksHome.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThoughtWorksHome.pch; sourceTree = "<group>"; };
-		F059C24F1E4DD313005EFE71 /* MomentsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentsViewModel.h; sourceTree = "<group>"; };
-		F059C2501E4DD313005EFE71 /* MomentsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsViewModel.m; sourceTree = "<group>"; };
-		F059C2521E4DD522005EFE71 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
-		F059C2531E4DD522005EFE71 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		F059C2551E4DD5B9005EFE71 /* HttpRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestManager.h; sourceTree = "<group>"; };
-		F059C2561E4DD5B9005EFE71 /* HttpRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequestManager.m; sourceTree = "<group>"; };
 		F059C2581E4DDD5F005EFE71 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		F059C2591E4DE198005EFE71 /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
-		F059C25A1E4DE198005EFE71 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
-		F05DF59D1E5035940056C3FD /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
-		F05DF59E1E5035940056C3FD /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
-		F05DF5A01E503F360056C3FD /* CommentGroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentGroundView.h; sourceTree = "<group>"; };
-		F05DF5A11E503F360056C3FD /* CommentGroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentGroundView.m; sourceTree = "<group>"; };
-		F063D40C1E4EC32D0053F6FD /* TweetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetModel.h; sourceTree = "<group>"; };
-		F063D40D1E4EC32D0053F6FD /* TweetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetModel.m; sourceTree = "<group>"; };
-		F063D40F1E4EC57C0053F6FD /* SenderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SenderModel.h; sourceTree = "<group>"; };
-		F063D4101E4EC57C0053F6FD /* SenderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SenderModel.m; sourceTree = "<group>"; };
-		F063D4121E4ECEFF0053F6FD /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
-		F063D4131E4ECEFF0053F6FD /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
 		F063D4151E4F24E00053F6FD /* ThoughtWorks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ThoughtWorks.png; sourceTree = "<group>"; };
+		F08E44721E52C45B00D926D8 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		F08E44731E52C45B00D926D8 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		F08E44741E52C45B00D926D8 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		F08E44751E52C45B00D926D8 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		F08E44761E52C45B00D926D8 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		F08E44841E52C64A00D926D8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F08E44851E52C64A00D926D8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F08E44871E52C64A00D926D8 /* ChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatListViewController.h; sourceTree = "<group>"; };
+		F08E44881E52C64A00D926D8 /* ChatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatListViewController.m; sourceTree = "<group>"; };
+		F08E448A1E52C64A00D926D8 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		F08E448B1E52C64A00D926D8 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		F08E448D1E52C64A00D926D8 /* FriendListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListViewController.h; sourceTree = "<group>"; };
+		F08E448E1E52C64A00D926D8 /* FriendListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListViewController.m; sourceTree = "<group>"; };
+		F08E448F1E52C64A00D926D8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		F08E44901E52C64A00D926D8 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		F08E44921E52C64A00D926D8 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		F08E44931E52C64A00D926D8 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		F08E44BF1E52C6F000D926D8 /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		F08E44C01E52C6F000D926D8 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		F08E44C11E52C6F000D926D8 /* SenderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SenderModel.h; sourceTree = "<group>"; };
+		F08E44C21E52C6F000D926D8 /* SenderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SenderModel.m; sourceTree = "<group>"; };
+		F08E44C31E52C6F000D926D8 /* TweetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetModel.h; sourceTree = "<group>"; };
+		F08E44C41E52C6F000D926D8 /* TweetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetModel.m; sourceTree = "<group>"; };
+		F08E44C51E52C6F000D926D8 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		F08E44C61E52C6F000D926D8 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		F08E44C71E52C6F000D926D8 /* MomentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentsViewController.h; sourceTree = "<group>"; };
+		F08E44C81E52C6F000D926D8 /* MomentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsViewController.m; sourceTree = "<group>"; };
+		F08E44CC1E52C6F000D926D8 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
+		F08E44CD1E52C6F000D926D8 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		F08E44CE1E52C6F000D926D8 /* CommentGroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentGroundView.h; sourceTree = "<group>"; };
+		F08E44CF1E52C6F000D926D8 /* CommentGroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentGroundView.m; sourceTree = "<group>"; };
+		F08E44D01E52C6F000D926D8 /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
+		F08E44D11E52C6F000D926D8 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
+		F08E44DD1E52C76100D926D8 /* HttpRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequestManager.h; sourceTree = "<group>"; };
+		F08E44DE1E52C76100D926D8 /* HttpRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequestManager.m; sourceTree = "<group>"; };
+		F08E44DF1E52C76100D926D8 /* MomentsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentsViewModel.h; sourceTree = "<group>"; };
+		F08E44E01E52C76100D926D8 /* MomentsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentsViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,18 +145,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F055790C1E51973100AF38CC /* SVPullToRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				F055790D1E51973100AF38CC /* SVPullToRefresh.h */,
-				F055790E1E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.h */,
-				F055790F1E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.m */,
-				F05579101E51973100AF38CC /* UIScrollView+SVPullToRefresh.h */,
-				F05579111E51973100AF38CC /* UIScrollView+SVPullToRefresh.m */,
-			);
-			path = SVPullToRefresh;
-			sourceTree = "<group>";
-		};
 		F059C1F91E4DB101005EFE71 = {
 			isa = PBXGroup;
 			children = (
@@ -180,22 +168,8 @@
 		F059C2041E4DB101005EFE71 /* ThoughtWorksHome */ = {
 			isa = PBXGroup;
 			children = (
-				F059C2081E4DB101005EFE71 /* AppDelegate.h */,
-				F059C2091E4DB101005EFE71 /* AppDelegate.m */,
-				F059C23B1E4DB171005EFE71 /* MainViewController.h */,
-				F059C23C1E4DB171005EFE71 /* MainViewController.m */,
-				F059C23E1E4DB47D005EFE71 /* ChatListViewController.h */,
-				F059C23F1E4DB47D005EFE71 /* ChatListViewController.m */,
-				F059C2411E4DB497005EFE71 /* FriendListViewController.h */,
-				F059C2421E4DB497005EFE71 /* FriendListViewController.m */,
-				F059C2441E4DB6BA005EFE71 /* DiscoverViewController.h */,
-				F059C2451E4DB6BA005EFE71 /* DiscoverViewController.m */,
-				F059C2471E4DB6CE005EFE71 /* MeViewController.h */,
-				F059C2481E4DB6CE005EFE71 /* MeViewController.m */,
-				F059C24A1E4DC555005EFE71 /* Moment */,
-				F059C2141E4DB101005EFE71 /* Assets.xcassets */,
-				F059C2161E4DB101005EFE71 /* LaunchScreen.storyboard */,
-				F059C2191E4DB101005EFE71 /* Info.plist */,
+				F08E44831E52C64A00D926D8 /* Business */,
+				F08E44701E52C45B00D926D8 /* Tool */,
 				F059C2051E4DB101005EFE71 /* Supporting Files */,
 			);
 			path = ThoughtWorksHome;
@@ -204,6 +178,9 @@
 		F059C2051E4DB101005EFE71 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F059C2141E4DB101005EFE71 /* Assets.xcassets */,
+				F059C2161E4DB101005EFE71 /* LaunchScreen.storyboard */,
+				F059C2191E4DB101005EFE71 /* Info.plist */,
 				F063D4151E4F24E00053F6FD /* ThoughtWorks.png */,
 				F059C24E1E4DCB56005EFE71 /* ThoughtWorksHome.pch */,
 				F059C2061E4DB101005EFE71 /* main.m */,
@@ -212,32 +189,127 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F059C24A1E4DC555005EFE71 /* Moment */ = {
+		F08E44701E52C45B00D926D8 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				F055790C1E51973100AF38CC /* SVPullToRefresh */,
-				F059C24B1E4DC579005EFE71 /* MomentsViewController.h */,
-				F059C24C1E4DC579005EFE71 /* MomentsViewController.m */,
-				F059C24F1E4DD313005EFE71 /* MomentsViewModel.h */,
-				F059C2501E4DD313005EFE71 /* MomentsViewModel.m */,
-				F059C2521E4DD522005EFE71 /* UserModel.h */,
-				F059C2531E4DD522005EFE71 /* UserModel.m */,
-				F063D40F1E4EC57C0053F6FD /* SenderModel.h */,
-				F063D4101E4EC57C0053F6FD /* SenderModel.m */,
-				F063D4121E4ECEFF0053F6FD /* CommentModel.h */,
-				F063D4131E4ECEFF0053F6FD /* CommentModel.m */,
-				F063D40C1E4EC32D0053F6FD /* TweetModel.h */,
-				F063D40D1E4EC32D0053F6FD /* TweetModel.m */,
-				F059C2551E4DD5B9005EFE71 /* HttpRequestManager.h */,
-				F059C2561E4DD5B9005EFE71 /* HttpRequestManager.m */,
-				F059C2591E4DE198005EFE71 /* TweetCell.h */,
-				F059C25A1E4DE198005EFE71 /* TweetCell.m */,
-				F05DF5A01E503F360056C3FD /* CommentGroundView.h */,
-				F05DF5A11E503F360056C3FD /* CommentGroundView.m */,
-				F05DF59D1E5035940056C3FD /* CommentCell.h */,
-				F05DF59E1E5035940056C3FD /* CommentCell.m */,
+				F08E44711E52C45B00D926D8 /* SVPullToRefresh */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		F08E44711E52C45B00D926D8 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				F08E44721E52C45B00D926D8 /* SVPullToRefresh.h */,
+				F08E44731E52C45B00D926D8 /* UIScrollView+SVInfiniteScrolling.h */,
+				F08E44741E52C45B00D926D8 /* UIScrollView+SVInfiniteScrolling.m */,
+				F08E44751E52C45B00D926D8 /* UIScrollView+SVPullToRefresh.h */,
+				F08E44761E52C45B00D926D8 /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
+		F08E44831E52C64A00D926D8 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				F08E44841E52C64A00D926D8 /* AppDelegate.h */,
+				F08E44851E52C64A00D926D8 /* AppDelegate.m */,
+				F08E448F1E52C64A00D926D8 /* MainViewController.h */,
+				F08E44901E52C64A00D926D8 /* MainViewController.m */,
+				F08E44861E52C64A00D926D8 /* ChatList */,
+				F08E448C1E52C64A00D926D8 /* FriendList */,
+				F08E44891E52C64A00D926D8 /* Discover */,
+				F08E44911E52C64A00D926D8 /* Me */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		F08E44861E52C64A00D926D8 /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				F08E44871E52C64A00D926D8 /* ChatListViewController.h */,
+				F08E44881E52C64A00D926D8 /* ChatListViewController.m */,
+			);
+			path = ChatList;
+			sourceTree = "<group>";
+		};
+		F08E44891E52C64A00D926D8 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				F08E448A1E52C64A00D926D8 /* DiscoverViewController.h */,
+				F08E448B1E52C64A00D926D8 /* DiscoverViewController.m */,
+				F08E44BB1E52C6F000D926D8 /* Moment */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		F08E448C1E52C64A00D926D8 /* FriendList */ = {
+			isa = PBXGroup;
+			children = (
+				F08E448D1E52C64A00D926D8 /* FriendListViewController.h */,
+				F08E448E1E52C64A00D926D8 /* FriendListViewController.m */,
+			);
+			path = FriendList;
+			sourceTree = "<group>";
+		};
+		F08E44911E52C64A00D926D8 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				F08E44921E52C64A00D926D8 /* MeViewController.h */,
+				F08E44931E52C64A00D926D8 /* MeViewController.m */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		F08E44BB1E52C6F000D926D8 /* Moment */ = {
+			isa = PBXGroup;
+			children = (
+				F08E44C71E52C6F000D926D8 /* MomentsViewController.h */,
+				F08E44C81E52C6F000D926D8 /* MomentsViewController.m */,
+				F08E44DC1E52C76100D926D8 /* Http&ViewModel */,
+				F08E44BE1E52C6F000D926D8 /* model */,
+				F08E44CB1E52C6F000D926D8 /* View */,
 			);
 			path = Moment;
+			sourceTree = "<group>";
+		};
+		F08E44BE1E52C6F000D926D8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F08E44BF1E52C6F000D926D8 /* CommentModel.h */,
+				F08E44C01E52C6F000D926D8 /* CommentModel.m */,
+				F08E44C11E52C6F000D926D8 /* SenderModel.h */,
+				F08E44C21E52C6F000D926D8 /* SenderModel.m */,
+				F08E44C31E52C6F000D926D8 /* TweetModel.h */,
+				F08E44C41E52C6F000D926D8 /* TweetModel.m */,
+				F08E44C51E52C6F000D926D8 /* UserModel.h */,
+				F08E44C61E52C6F000D926D8 /* UserModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F08E44CB1E52C6F000D926D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F08E44CC1E52C6F000D926D8 /* CommentCell.h */,
+				F08E44CD1E52C6F000D926D8 /* CommentCell.m */,
+				F08E44CE1E52C6F000D926D8 /* CommentGroundView.h */,
+				F08E44CF1E52C6F000D926D8 /* CommentGroundView.m */,
+				F08E44D01E52C6F000D926D8 /* TweetCell.h */,
+				F08E44D11E52C6F000D926D8 /* TweetCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F08E44DC1E52C76100D926D8 /* Http&ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F08E44DD1E52C76100D926D8 /* HttpRequestManager.h */,
+				F08E44DE1E52C76100D926D8 /* HttpRequestManager.m */,
+				F08E44DF1E52C76100D926D8 /* MomentsViewModel.h */,
+				F08E44E01E52C76100D926D8 /* MomentsViewModel.m */,
+			);
+			path = "Http&ViewModel";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,24 +497,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F063D4111E4EC57C0053F6FD /* SenderModel.m in Sources */,
-				F059C20A1E4DB101005EFE71 /* AppDelegate.m in Sources */,
-				F05579121E51973100AF38CC /* UIScrollView+SVInfiniteScrolling.m in Sources */,
-				F059C2461E4DB6BA005EFE71 /* DiscoverViewController.m in Sources */,
-				F05579131E51973100AF38CC /* UIScrollView+SVPullToRefresh.m in Sources */,
-				F059C2491E4DB6CE005EFE71 /* MeViewController.m in Sources */,
-				F059C25B1E4DE198005EFE71 /* TweetCell.m in Sources */,
-				F063D40E1E4EC32D0053F6FD /* TweetModel.m in Sources */,
-				F063D4141E4ECEFF0053F6FD /* CommentModel.m in Sources */,
-				F05DF5A21E503F360056C3FD /* CommentGroundView.m in Sources */,
-				F059C2431E4DB497005EFE71 /* FriendListViewController.m in Sources */,
-				F059C2571E4DD5B9005EFE71 /* HttpRequestManager.m in Sources */,
-				F059C24D1E4DC579005EFE71 /* MomentsViewController.m in Sources */,
-				F059C23D1E4DB171005EFE71 /* MainViewController.m in Sources */,
-				F05DF59F1E5035940056C3FD /* CommentCell.m in Sources */,
-				F059C2541E4DD522005EFE71 /* UserModel.m in Sources */,
-				F059C2511E4DD313005EFE71 /* MomentsViewModel.m in Sources */,
-				F059C2401E4DB47D005EFE71 /* ChatListViewController.m in Sources */,
+				F08E44941E52C64A00D926D8 /* AppDelegate.m in Sources */,
+				F08E44DB1E52C6F000D926D8 /* TweetCell.m in Sources */,
+				F08E44D41E52C6F000D926D8 /* SenderModel.m in Sources */,
+				F08E44771E52C45B00D926D8 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				F08E44961E52C64A00D926D8 /* DiscoverViewController.m in Sources */,
+				F08E44D71E52C6F000D926D8 /* MomentsViewController.m in Sources */,
+				F08E44D31E52C6F000D926D8 /* CommentModel.m in Sources */,
+				F08E44DA1E52C6F000D926D8 /* CommentGroundView.m in Sources */,
+				F08E44E21E52C76100D926D8 /* MomentsViewModel.m in Sources */,
+				F08E44781E52C45B00D926D8 /* UIScrollView+SVPullToRefresh.m in Sources */,
+				F08E44D61E52C6F000D926D8 /* UserModel.m in Sources */,
+				F08E44991E52C64A00D926D8 /* MeViewController.m in Sources */,
+				F08E44D91E52C6F000D926D8 /* CommentCell.m in Sources */,
+				F08E44D51E52C6F000D926D8 /* TweetModel.m in Sources */,
+				F08E44E11E52C76100D926D8 /* HttpRequestManager.m in Sources */,
+				F08E44981E52C64A00D926D8 /* MainViewController.m in Sources */,
+				F08E44951E52C64A00D926D8 /* ChatListViewController.m in Sources */,
+				F08E44971E52C64A00D926D8 /* FriendListViewController.m in Sources */,
 				F059C2071E4DB101005EFE71 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
